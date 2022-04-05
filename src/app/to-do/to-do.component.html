@@ -1,0 +1,19 @@
+ 
+<h1>To Do Table</h1>
+
+
+<button (click)="getStat()" class="btn btn-dark" >Get Stat</button>
+{{n}}
+<table class="table">
+<th>ID</th>
+<th> Title</th>
+<th>Completed</th>
+<tbody>
+    <tr *ngFor="let todo of todoList">
+        <td>{{todo.id}}</td>
+        <td>{{todo.title}}</td>
+        <td [ngStyle]="{'background-color' : todo.completed == true ? 'green' : 'red'}">{{todo.completed}}</td>   
+    </tr>
+</tbody>
+
+</table>

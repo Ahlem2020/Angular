@@ -1,0 +1,49 @@
+<p>home works!</p>
+<h1>{{title}}</h1>
+<button (click)="getStat()" class="btn btn-dark" >Get Stat</button>
+{{nb}}
+<form>
+    <input type="number" name="nbMax" [(ngModel)]="ngMax">
+</form>
+<div class="row">
+    <div class="col-md-4" *ngFor="let product of productList , let i = index">
+        <div class="card " style="width: 18rem;" >
+            <div class="card-body">
+                <img class="card-img-top" src="../../assets/2.png" >
+              <h3 class="card-title">Name :  {{ product.title }}</h3>
+              <h5 class="card-title">Price : {{ product.price }}</h5>
+              <h5 class="card-title"> Quantity : {{ product.quantity }}</h5>
+              <h5 class="card-title"> Like : {{ product.like }}</h5>
+
+
+               <button (click)="IncrimentLike(i)" class="btn btn-primary"> Like</button>  
+              <button (click)="ByProduct(i)" class="btn btn-danger" [disabled]="product.quantity==0"> Buy</button>            </div>
+          </div>
+        </div>
+</div>
+
+ <!-- <table   class="table table-striped" >
+    <th>Id</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Like</th>
+    <th>btn Like</th>
+    <th>btn Buy</th>
+    <tbody *ngFor="let product of productList , let i = index">        
+        <tr *ngIf=" ngMax >=product.price || ngMax==null">
+            
+            <td>{{product.id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.like}} </td>
+              <td><button (click)="IncrimentLike(i)" class="btn btn-primary"> Like</button></td>  
+<td>
+
+    <button (click)="ByProduct(i)" class="btn btn-danger" [disabled]="product.quantity==0"> Buy</button>
+
+</td>
+</tr>
+    </tbody>
+</table> -->
